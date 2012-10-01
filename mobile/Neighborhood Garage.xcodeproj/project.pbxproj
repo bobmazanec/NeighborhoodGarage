@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C44607861618B8FC005CA102 /* NGFuelingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44607851618B8FC005CA102 /* NGFuelingListViewController.m */; };
+		C4EBDF7416154F3D00ACA506 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7316154F3D00ACA506 /* UIKit.framework */; };
+		C4EBDF7616154F3D00ACA506 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7516154F3D00ACA506 /* Foundation.framework */; };
+		C4EBDF7816154F3D00ACA506 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7716154F3D00ACA506 /* CoreGraphics.framework */; };
+		C4EBDF7A16154F3D00ACA506 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7916154F3D00ACA506 /* CoreData.framework */; };
+		C4EBDF8016154F3D00ACA506 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4EBDF7E16154F3D00ACA506 /* InfoPlist.strings */; };
+		C4EBDF8216154F3D00ACA506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDF8116154F3D00ACA506 /* main.m */; };
+		C4EBDF8616154F3D00ACA506 /* NGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDF8516154F3D00ACA506 /* NGAppDelegate.m */; };
+		C4EBDF8916154F3D00ACA506 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4EBDF8716154F3D00ACA506 /* MainStoryboard.storyboard */; };
+		C4EBDF8C16154F3D00ACA506 /* Neighborhood_Garage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDF8A16154F3D00ACA506 /* Neighborhood_Garage.xcdatamodeld */; };
+		C4EBDF9216154F3D00ACA506 /* NGFuelingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDF9116154F3D00ACA506 /* NGFuelingDetailViewController.m */; };
+		C4EBDF9A16154F3D00ACA506 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF9916154F3D00ACA506 /* SenTestingKit.framework */; };
+		C4EBDF9B16154F3D00ACA506 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7316154F3D00ACA506 /* UIKit.framework */; };
+		C4EBDF9C16154F3D00ACA506 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7516154F3D00ACA506 /* Foundation.framework */; };
+		C4EBDF9D16154F3D00ACA506 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7916154F3D00ACA506 /* CoreData.framework */; };
+		C4EBDFA516154F3D00ACA506 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4EBDFA316154F3D00ACA506 /* InfoPlist.strings */; };
+		C4EBDFA816154F3D00ACA506 /* Neighborhood_GarageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDFA716154F3D00ACA506 /* Neighborhood_GarageTests.m */; };
+		C4EBDFB81616AEE900ACA506 /* NGFuelingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDFB71616AEE900ACA506 /* NGFuelingViewController.m */; };
+		C4EBDFC41617A07D00ACA506 /* NGFueling.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDFC31617A07D00ACA506 /* NGFueling.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4EBDF9E16154F3D00ACA506 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4EBDF6616154F3D00ACA506 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4EBDF6E16154F3D00ACA506;
+			remoteInfo = "Neighborhood Garage";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C44607851618B8FC005CA102 /* NGFuelingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGFuelingListViewController.m; sourceTree = "<group>"; };
+		C4EBDF6F16154F3D00ACA506 /* Neighborhood Garage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighborhood Garage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4EBDF7316154F3D00ACA506 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C4EBDF7516154F3D00ACA506 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C4EBDF7716154F3D00ACA506 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C4EBDF7916154F3D00ACA506 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C4EBDF7D16154F3D00ACA506 /* Neighborhood Garage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Neighborhood Garage-Info.plist"; sourceTree = "<group>"; };
+		C4EBDF7F16154F3D00ACA506 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C4EBDF8116154F3D00ACA506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4EBDF8316154F3D00ACA506 /* Neighborhood Garage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neighborhood Garage-Prefix.pch"; sourceTree = "<group>"; };
+		C4EBDF8416154F3D00ACA506 /* NGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGAppDelegate.h; sourceTree = "<group>"; };
+		C4EBDF8516154F3D00ACA506 /* NGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGAppDelegate.m; sourceTree = "<group>"; };
+		C4EBDF8816154F3D00ACA506 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		C4EBDF8B16154F3D00ACA506 /* Neighborhood_Garage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Neighborhood_Garage.xcdatamodel; sourceTree = "<group>"; };
+		C4EBDF8D16154F3D00ACA506 /* NGFuelingListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGFuelingListViewController.h; sourceTree = "<group>"; };
+		C4EBDF9016154F3D00ACA506 /* NGFuelingDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGFuelingDetailViewController.h; sourceTree = "<group>"; };
+		C4EBDF9116154F3D00ACA506 /* NGFuelingDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGFuelingDetailViewController.m; sourceTree = "<group>"; };
+		C4EBDF9816154F3D00ACA506 /* Neighborhood GarageTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neighborhood GarageTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4EBDF9916154F3D00ACA506 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C4EBDFA216154F3D00ACA506 /* Neighborhood GarageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Neighborhood GarageTests-Info.plist"; sourceTree = "<group>"; };
+		C4EBDFA416154F3D00ACA506 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C4EBDFA616154F3D00ACA506 /* Neighborhood_GarageTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Neighborhood_GarageTests.h; sourceTree = "<group>"; };
+		C4EBDFA716154F3D00ACA506 /* Neighborhood_GarageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Neighborhood_GarageTests.m; sourceTree = "<group>"; };
+		C4EBDFB61616AEE900ACA506 /* NGFuelingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGFuelingViewController.h; sourceTree = "<group>"; };
+		C4EBDFB71616AEE900ACA506 /* NGFuelingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGFuelingViewController.m; sourceTree = "<group>"; };
+		C4EBDFC21617A07D00ACA506 /* NGFueling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGFueling.h; sourceTree = "<group>"; };
+		C4EBDFC31617A07D00ACA506 /* NGFueling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGFueling.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4EBDF6C16154F3D00ACA506 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EBDF7416154F3D00ACA506 /* UIKit.framework in Frameworks */,
+				C4EBDF7616154F3D00ACA506 /* Foundation.framework in Frameworks */,
+				C4EBDF7816154F3D00ACA506 /* CoreGraphics.framework in Frameworks */,
+				C4EBDF7A16154F3D00ACA506 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4EBDF9416154F3D00ACA506 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EBDF9A16154F3D00ACA506 /* SenTestingKit.framework in Frameworks */,
+				C4EBDF9B16154F3D00ACA506 /* UIKit.framework in Frameworks */,
+				C4EBDF9C16154F3D00ACA506 /* Foundation.framework in Frameworks */,
+				C4EBDF9D16154F3D00ACA506 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4EBDF6416154F3D00ACA506 = {
+			isa = PBXGroup;
+			children = (
+				C4EBDF7B16154F3D00ACA506 /* Neighborhood Garage */,
+				C4EBDFA016154F3D00ACA506 /* Neighborhood GarageTests */,
+				C4EBDF7216154F3D00ACA506 /* Frameworks */,
+				C4EBDF7016154F3D00ACA506 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4EBDF7016154F3D00ACA506 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4EBDF6F16154F3D00ACA506 /* Neighborhood Garage.app */,
+				C4EBDF9816154F3D00ACA506 /* Neighborhood GarageTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4EBDF7216154F3D00ACA506 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4EBDF7316154F3D00ACA506 /* UIKit.framework */,
+				C4EBDF7516154F3D00ACA506 /* Foundation.framework */,
+				C4EBDF7716154F3D00ACA506 /* CoreGraphics.framework */,
+				C4EBDF7916154F3D00ACA506 /* CoreData.framework */,
+				C4EBDF9916154F3D00ACA506 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4EBDF7B16154F3D00ACA506 /* Neighborhood Garage */ = {
+			isa = PBXGroup;
+			children = (
+				C4EBDF8416154F3D00ACA506 /* NGAppDelegate.h */,
+				C4EBDF8516154F3D00ACA506 /* NGAppDelegate.m */,
+				C4EBDFC21617A07D00ACA506 /* NGFueling.h */,
+				C4EBDFC31617A07D00ACA506 /* NGFueling.m */,
+				C4EBDF9016154F3D00ACA506 /* NGFuelingDetailViewController.h */,
+				C4EBDF9116154F3D00ACA506 /* NGFuelingDetailViewController.m */,
+				C4EBDF8D16154F3D00ACA506 /* NGFuelingListViewController.h */,
+				C44607851618B8FC005CA102 /* NGFuelingListViewController.m */,
+				C4EBDFB61616AEE900ACA506 /* NGFuelingViewController.h */,
+				C4EBDFB71616AEE900ACA506 /* NGFuelingViewController.m */,
+				C4EBDF8716154F3D00ACA506 /* MainStoryboard.storyboard */,
+				C4EBDF8A16154F3D00ACA506 /* Neighborhood_Garage.xcdatamodeld */,
+				C4EBDF7C16154F3D00ACA506 /* Supporting Files */,
+			);
+			path = "Neighborhood Garage";
+			sourceTree = "<group>";
+		};
+		C4EBDF7C16154F3D00ACA506 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4EBDF7D16154F3D00ACA506 /* Neighborhood Garage-Info.plist */,
+				C4EBDF7E16154F3D00ACA506 /* InfoPlist.strings */,
+				C4EBDF8116154F3D00ACA506 /* main.m */,
+				C4EBDF8316154F3D00ACA506 /* Neighborhood Garage-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4EBDFA016154F3D00ACA506 /* Neighborhood GarageTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4EBDFA616154F3D00ACA506 /* Neighborhood_GarageTests.h */,
+				C4EBDFA716154F3D00ACA506 /* Neighborhood_GarageTests.m */,
+				C4EBDFA116154F3D00ACA506 /* Supporting Files */,
+			);
+			path = "Neighborhood GarageTests";
+			sourceTree = "<group>";
+		};
+		C4EBDFA116154F3D00ACA506 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4EBDFA216154F3D00ACA506 /* Neighborhood GarageTests-Info.plist */,
+				C4EBDFA316154F3D00ACA506 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4EBDF6E16154F3D00ACA506 /* Neighborhood Garage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4EBDFAB16154F3D00ACA506 /* Build configuration list for PBXNativeTarget "Neighborhood Garage" */;
+			buildPhases = (
+				C4EBDF6B16154F3D00ACA506 /* Sources */,
+				C4EBDF6C16154F3D00ACA506 /* Frameworks */,
+				C4EBDF6D16154F3D00ACA506 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Neighborhood Garage";
+			productName = "Neighborhood Garage";
+			productReference = C4EBDF6F16154F3D00ACA506 /* Neighborhood Garage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C4EBDF9716154F3D00ACA506 /* Neighborhood GarageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4EBDFAE16154F3D00ACA506 /* Build configuration list for PBXNativeTarget "Neighborhood GarageTests" */;
+			buildPhases = (
+				C4EBDF9316154F3D00ACA506 /* Sources */,
+				C4EBDF9416154F3D00ACA506 /* Frameworks */,
+				C4EBDF9516154F3D00ACA506 /* Resources */,
+				C4EBDF9616154F3D00ACA506 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4EBDF9F16154F3D00ACA506 /* PBXTargetDependency */,
+			);
+			name = "Neighborhood GarageTests";
+			productName = "Neighborhood GarageTests";
+			productReference = C4EBDF9816154F3D00ACA506 /* Neighborhood GarageTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4EBDF6616154F3D00ACA506 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NG;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Bob Mazanec";
+			};
+			buildConfigurationList = C4EBDF6916154F3D00ACA506 /* Build configuration list for PBXProject "Neighborhood Garage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C4EBDF6416154F3D00ACA506;
+			productRefGroup = C4EBDF7016154F3D00ACA506 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4EBDF6E16154F3D00ACA506 /* Neighborhood Garage */,
+				C4EBDF9716154F3D00ACA506 /* Neighborhood GarageTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4EBDF6D16154F3D00ACA506 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EBDF8016154F3D00ACA506 /* InfoPlist.strings in Resources */,
+				C4EBDF8916154F3D00ACA506 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4EBDF9516154F3D00ACA506 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EBDFA516154F3D00ACA506 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C4EBDF9616154F3D00ACA506 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4EBDF6B16154F3D00ACA506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EBDF8216154F3D00ACA506 /* main.m in Sources */,
+				C4EBDF8616154F3D00ACA506 /* NGAppDelegate.m in Sources */,
+				C4EBDF8C16154F3D00ACA506 /* Neighborhood_Garage.xcdatamodeld in Sources */,
+				C4EBDF9216154F3D00ACA506 /* NGFuelingDetailViewController.m in Sources */,
+				C4EBDFB81616AEE900ACA506 /* NGFuelingViewController.m in Sources */,
+				C4EBDFC41617A07D00ACA506 /* NGFueling.m in Sources */,
+				C44607861618B8FC005CA102 /* NGFuelingListViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4EBDF9316154F3D00ACA506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EBDFA816154F3D00ACA506 /* Neighborhood_GarageTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4EBDF9F16154F3D00ACA506 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4EBDF6E16154F3D00ACA506 /* Neighborhood Garage */;
+			targetProxy = C4EBDF9E16154F3D00ACA506 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C4EBDF7E16154F3D00ACA506 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4EBDF7F16154F3D00ACA506 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C4EBDF8716154F3D00ACA506 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4EBDF8816154F3D00ACA506 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		C4EBDFA316154F3D00ACA506 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4EBDFA416154F3D00ACA506 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C4EBDFA916154F3D00ACA506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C4EBDFAA16154F3D00ACA506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4EBDFAC16154F3D00ACA506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Neighborhood Garage/Neighborhood Garage-Prefix.pch";
+				INFOPLIST_FILE = "Neighborhood Garage/Neighborhood Garage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C4EBDFAD16154F3D00ACA506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Neighborhood Garage/Neighborhood Garage-Prefix.pch";
+				INFOPLIST_FILE = "Neighborhood Garage/Neighborhood Garage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C4EBDFAF16154F3D00ACA506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Neighborhood Garage.app/Neighborhood Garage";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Neighborhood Garage/Neighborhood Garage-Prefix.pch";
+				INFOPLIST_FILE = "Neighborhood GarageTests/Neighborhood GarageTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C4EBDFB016154F3D00ACA506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Neighborhood Garage.app/Neighborhood Garage";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Neighborhood Garage/Neighborhood Garage-Prefix.pch";
+				INFOPLIST_FILE = "Neighborhood GarageTests/Neighborhood GarageTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4EBDF6916154F3D00ACA506 /* Build configuration list for PBXProject "Neighborhood Garage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4EBDFA916154F3D00ACA506 /* Debug */,
+				C4EBDFAA16154F3D00ACA506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4EBDFAB16154F3D00ACA506 /* Build configuration list for PBXNativeTarget "Neighborhood Garage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4EBDFAC16154F3D00ACA506 /* Debug */,
+				C4EBDFAD16154F3D00ACA506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4EBDFAE16154F3D00ACA506 /* Build configuration list for PBXNativeTarget "Neighborhood GarageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4EBDFAF16154F3D00ACA506 /* Debug */,
+				C4EBDFB016154F3D00ACA506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C4EBDF8A16154F3D00ACA506 /* Neighborhood_Garage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4EBDF8B16154F3D00ACA506 /* Neighborhood_Garage.xcdatamodel */,
+			);
+			currentVersion = C4EBDF8B16154F3D00ACA506 /* Neighborhood_Garage.xcdatamodel */;
+			path = Neighborhood_Garage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C4EBDF6616154F3D00ACA506 /* Project object */;
+}
