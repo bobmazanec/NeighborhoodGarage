@@ -107,11 +107,14 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     textField.keyboardType = UIKeyboardTypeDecimalPad;
     textField.inputAccessoryView = [self accessoryViewCallsClearSelector:clearSelector callsDoneSelector:doneSelector];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldChanaged:) name:UITextFieldTextDidChangeNotification object:textField];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldChanaged:)
+                                                 name:UITextFieldTextDidChangeNotification
+                                               object:textField
+     ];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
     [self setDoneButton:nil];

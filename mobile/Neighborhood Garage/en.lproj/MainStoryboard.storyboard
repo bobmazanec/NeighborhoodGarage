@@ -79,7 +79,7 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Enter Fueling Info" id="Urb-Ov-xKS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="QUl-MK-J3h">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QUl-MK-J3h">
                             <connections>
                                 <action selector="saveFueling:" destination="Kxd-hi-xND" id="bp6-sV-tdT"/>
                             </connections>
@@ -259,7 +259,6 @@
             <relationships>
                 <relationship kind="outlet" name="costLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="odometerLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="volumeLabel" candidateClass="UILabel"/>
             </relationships>
