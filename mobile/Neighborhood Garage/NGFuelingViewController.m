@@ -15,13 +15,20 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 
 @interface NGFuelingViewController ()
 @property (weak, nonatomic) IBOutlet UITextField        *costTextField;
+@property (weak, nonatomic) IBOutlet UITextField        *dateField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem    *doneButton;
 @property (weak, nonatomic) IBOutlet UITextField        *fuelVolumeTextField;
 @property (weak, nonatomic) IBOutlet UITextField        *odometerTextField;
+
+@property (strong, nonatomic) NSDate        *date;
+@property (strong, nonatomic) UIDatePicker  *datePicker;
 @end
 
 @implementation NGFuelingViewController
 @synthesize costTextField       = _costTextField;
+@synthesize date                = _date;
+@synthesize dateField           = _dateField;
+@synthesize datePicker          = _datePicker;
 @synthesize doneButton          = _doneButton;
 @synthesize fuelVolumeTextField = _fuelVolumeTextField;
 @synthesize managedObjectContext= _managedObjectContext;
@@ -30,7 +37,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 - (IBAction)saveFueling:(id)sender {
     NGFueling *newFueling = [NSEntityDescription insertNewObjectForEntityForName:@"Fueling"inManagedObjectContext:self.managedObjectContext];
     
-    newFueling.timeStamp    = [NSDate date];
+    newFueling.timeStamp    = self.date;
     newFueling.odometer     = NumberFromTextField( self.odometerTextField );
     newFueling.fuelCost     = NumberFromTextField( self.costTextField );
     newFueling.fuelVolume   = NumberFromTextField( self.fuelVolumeTextField );
@@ -43,15 +50,16 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
         abort();
     }
     
-    // Clear the entries & tell the user all is well
+    // Dismiss/hide any keyboard/inputView visible
+    [self hideCostKeyboard];
+    [self hideFuelVolumeKeyboard];
+    [self hideOdometerKeyboard];
+    [self dismissDatePicker];
+    
+    // Clear the entries
     [self clearCost];
     [self clearFuelVolume];
     [self setDoneButtonState];
-    
-    /*
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Saved" message:@"Saved the Fueling" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alertView show];
-    */
 }
 
 - (BOOL)textFieldHasData:(UITextField *)textField {
@@ -91,11 +99,17 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.date = [NSDate date];
+    
     [self initDecimalEntryTextField:self.costTextField withClearSelector:@selector(clearCost) withDoneSelector:@selector(hideCostKeyboard)];
     
     [self initDecimalEntryTextField:self.fuelVolumeTextField withClearSelector:@selector(clearFuelVolume) withDoneSelector:@selector(hideFuelVolumeKeyboard)];
     
     [self initDecimalEntryTextField:self.odometerTextField withClearSelector:@selector(clearOdometer) withDoneSelector:@selector(hideOdometerKeyboard)];
+    
+    self.dateField.inputView            = self.datePicker;
+    self.dateField.inputAccessoryView   = [self dateFieldAccessoryView];
+    [self showDate];
     
     [self setDoneButtonState];
 
@@ -121,6 +135,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     [self setOdometerTextField:nil];
     [self setFuelVolumeTextField:nil];
     [self setCostTextField:nil];
+    [self setDateField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -154,6 +169,28 @@ target:self action:SELECTOR]
     return tb;
 }
 
+- (UIToolbar *)dateFieldAccessoryView {
+    // Return an accessory toolbar with two buttons: Clear and Done
+    UIToolbar *tb = [[UIToolbar alloc] initWithFrame: CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 44.0f)];
+    tb.tintColor = [UIColor darkGrayColor];
+    NSMutableArray *items = [NSMutableArray array];
+    [items addObject:BARBUTTON(@"Today", @selector(selectToday))];
+    [items addObject:SYSBARBUTTON( UIBarButtonSystemItemFlexibleSpace, nil)];
+    [items addObject:BARBUTTON(@"Done", @selector(dismissDatePicker))];
+    tb.items = items;
+    return tb;
+}
+
+- (void)selectToday {
+    self.datePicker.date = [NSDate date];
+}
+
+- (void)dismissDatePicker {
+    self.date = self.datePicker.date;
+    [self showDate];
+    [self.dateField resignFirstResponder];
+}
+
 #pragma mark - Text Field functions
 
 - (void)clearCost {
@@ -179,4 +216,33 @@ target:self action:SELECTOR]
 - (void)hideOdometerKeyboard {
     [self.odometerTextField resignFirstResponder];
 }
+
+- (void)showDate {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    dateFormatter.dateFormat = @"MM/dd/yyyy";
+    
+    self.dateField.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:self.date]];
+}
+
+#pragma mark - Date picker
+
+- (void)dateChanged:(id)sender {
+    self.date = self.datePicker.date;
+    [self showDate];
+}
+
+- (UIDatePicker *)datePicker {
+    if ( ! _datePicker ) {
+        _datePicker = [[UIDatePicker alloc] init];
+        _datePicker.datePickerMode  = UIDatePickerModeDate;
+        
+        [_datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
+        _datePicker.date = self.date;
+        _datePicker.maximumDate = [NSDate date];    // no later than today
+    }
+    
+    return _datePicker;
+}
+
 @end

@@ -17,11 +17,11 @@
                         <sections>
                             <tableViewSection id="TTc-GA-2wV">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="144" id="rBT-bU-b8B">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="179" id="rBT-bU-b8B">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="143"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Odometer:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="eAe-fN-cXG">
@@ -70,6 +70,19 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="SxF-lp-eyT">
+                                                    <rect key="frame" x="20" y="137" width="82" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="kqa-He-V9L">
+                                                    <rect key="frame" x="110" y="131" width="144" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -87,6 +100,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="costTextField" destination="8rh-dW-BGR" id="gDM-PE-bXI"/>
+                        <outlet property="dateField" destination="kqa-He-V9L" id="7xn-un-4I2"/>
                         <outlet property="doneButton" destination="QUl-MK-J3h" id="R1f-v0-9ns"/>
                         <outlet property="fuelVolumeTextField" destination="rTl-gS-gKQ" id="mrQ-ik-UJ0"/>
                         <outlet property="odometerTextField" destination="cni-wc-KrX" id="btW-3V-YdB"/>
@@ -271,6 +285,7 @@
             <relationships>
                 <relationship kind="action" name="saveFueling:"/>
                 <relationship kind="outlet" name="costTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dateField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="fuelVolumeTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="odometerTextField" candidateClass="UITextField"/>
