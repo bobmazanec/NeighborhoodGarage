@@ -100,8 +100,10 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     [super viewDidLoad];
     
     self.date = [NSDate date];
-    
-    [self initDecimalEntryTextField:self.costTextField withClearSelector:@selector(clearCost) withDoneSelector:@selector(hideCostKeyboard)];
+
+    self.costTextField.keyboardType         = UIKeyboardTypeNumberPad;
+    self.costTextField.inputAccessoryView   = [self accessoryViewCallsClearSelector:@selector(clearCost) callsDoneSelector:@selector(hideCostKeyboard)];
+    self.costTextField.delegate             = self;
     
     [self initDecimalEntryTextField:self.fuelVolumeTextField withClearSelector:@selector(clearFuelVolume) withDoneSelector:@selector(hideFuelVolumeKeyboard)];
     
@@ -243,6 +245,20 @@ target:self action:SELECTOR]
     }
     
     return _datePicker;
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ( textField == self.costTextField ) {
+        NSMutableString *newString = [textField.text mutableCopy];
+        [newString replaceCharactersInRange:range withString:string];
+        [newString replaceOccurrencesOfString:@"." withString:@"" options:0 range:NSMakeRange(0, [newString length])];
+        NSInteger intValue = [newString integerValue];
+        textField.text = [NSString stringWithFormat:@"%0.2f", intValue / 100.0];
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NGFuelingViewController : UITableViewController
+@interface NGFuelingViewController : UITableViewController <UITextFieldDelegate>
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
