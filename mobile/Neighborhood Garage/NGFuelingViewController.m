@@ -30,17 +30,29 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 @synthesize dateField           = _dateField;
 @synthesize datePicker          = _datePicker;
 @synthesize doneButton          = _doneButton;
+@synthesize fueling             = _fueling;
 @synthesize fuelVolumeTextField = _fuelVolumeTextField;
 @synthesize managedObjectContext= _managedObjectContext;
 @synthesize odometerTextField   = _odometerTextField;
 
-- (IBAction)saveFueling:(id)sender {
-    NGFueling *newFueling = [NSEntityDescription insertNewObjectForEntityForName:@"Fueling"inManagedObjectContext:self.managedObjectContext];
+
+- (NSManagedObjectContext *)managedObjectContext {
+    if ( ! _managedObjectContext && self.fueling != nil ) {
+        _managedObjectContext = self.fueling.managedObjectContext;
+    }
     
-    newFueling.timeStamp    = self.date;
-    newFueling.odometer     = NumberFromTextField( self.odometerTextField );
-    newFueling.fuelCost     = NumberFromTextField( self.costTextField );
-    newFueling.fuelVolume   = NumberFromTextField( self.fuelVolumeTextField );
+    return _managedObjectContext;
+}
+
+- (IBAction)saveFueling:(id)sender {
+    if ( ! self.fueling) {
+        self.fueling = [NSEntityDescription insertNewObjectForEntityForName:@"Fueling"inManagedObjectContext:self.managedObjectContext];
+    }
+    
+    self.fueling.timeStamp    = self.date;
+    self.fueling.odometer     = NumberFromTextField( self.odometerTextField );
+    self.fueling.fuelCost     = NumberFromTextField( self.costTextField );
+    self.fueling.fuelVolume   = NumberFromTextField( self.fuelVolumeTextField );
     
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
@@ -99,8 +111,15 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.date = [NSDate date];
-
+    if ( self.fueling ) {
+        self.costTextField      .text   = [self.fueling.fuelCost   stringValue];
+        self.date                       =  self.fueling.timeStamp;
+        self.fuelVolumeTextField.text   = [self.fueling.fuelVolume stringValue];
+        self.odometerTextField  .text   = [self.fueling.odometer   stringValue];
+    } else {
+        self.date = [NSDate date];
+    }
+    
     self.costTextField.keyboardType         = UIKeyboardTypeNumberPad;
     self.costTextField.inputAccessoryView   = [self accessoryViewCallsClearSelector:@selector(clearCost) callsDoneSelector:@selector(hideCostKeyboard)];
     self.costTextField.delegate             = self;
@@ -110,9 +129,10 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     [self initDecimalEntryTextField:self.odometerTextField withClearSelector:@selector(clearOdometer) withDoneSelector:@selector(hideOdometerKeyboard)];
     
     self.dateField.inputView            = self.datePicker;
-    self.dateField.inputAccessoryView   = [self dateFieldAccessoryView];
-    [self showDate];
+    self.dateField.inputAccessoryView   = [self dateFieldAccessoryView];    // self.date must be set!
     
+    [self showDate];
+
     [self setDoneButtonState];
 
     // Uncomment the following line to preserve selection between presentations.

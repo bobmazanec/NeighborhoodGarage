@@ -10,6 +10,7 @@
 
 #import "NGFueling.h"
 #import "NGFuelingDetailViewController.h"
+#import "NGFuelingViewController.h"
 
 @interface NGFuelingListViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -68,9 +69,16 @@
     return NO;
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self performSegueWithIdentifier:@"editDetail" sender:self];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"editDetail"]
+     || [[segue identifier] isEqualToString:@"showDetail"]
+    ) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NGFueling *fueling  = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setFueling:fueling];
