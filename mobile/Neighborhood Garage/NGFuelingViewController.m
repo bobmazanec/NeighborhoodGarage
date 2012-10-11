@@ -217,6 +217,7 @@ target:self action:SELECTOR]
 
 - (void)clearCost {
     self.costTextField.text = @"";
+    [self setDoneButtonState];
 }
 
 - (void)hideCostKeyboard {
@@ -275,6 +276,7 @@ target:self action:SELECTOR]
         [newString replaceOccurrencesOfString:@"." withString:@"" options:0 range:NSMakeRange(0, [newString length])];
         NSInteger intValue = [newString integerValue];
         textField.text = [NSString stringWithFormat:@"%0.2f", intValue / 100.0];
+        [self setDoneButtonState];
         return NO;
     }
     
