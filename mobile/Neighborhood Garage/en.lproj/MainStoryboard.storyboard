@@ -105,9 +105,9 @@
                     <connections>
                         <outlet property="costTextField" destination="8rh-dW-BGR" id="gDM-PE-bXI"/>
                         <outlet property="dateField" destination="kqa-He-V9L" id="7xn-un-4I2"/>
-                        <outlet property="doneButton" destination="QUl-MK-J3h" id="R1f-v0-9ns"/>
                         <outlet property="fuelVolumeTextField" destination="rTl-gS-gKQ" id="mrQ-ik-UJ0"/>
                         <outlet property="odometerTextField" destination="cni-wc-KrX" id="btW-3V-YdB"/>
+                        <outlet property="saveButton" destination="QUl-MK-J3h" id="zCm-Hr-dMY"/>
                     </connections>
                 </tableViewController>
             </objects>
@@ -293,9 +293,9 @@
                 <relationship kind="action" name="saveFueling:"/>
                 <relationship kind="outlet" name="costTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dateField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="fuelVolumeTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="odometerTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
     </classes>

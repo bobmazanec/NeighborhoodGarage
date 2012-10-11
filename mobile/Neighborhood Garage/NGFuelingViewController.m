@@ -16,7 +16,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 @interface NGFuelingViewController ()
 @property (weak, nonatomic) IBOutlet UITextField        *costTextField;
 @property (weak, nonatomic) IBOutlet UITextField        *dateField;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem    *doneButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem    *saveButton;
 @property (weak, nonatomic) IBOutlet UITextField        *fuelVolumeTextField;
 @property (weak, nonatomic) IBOutlet UITextField        *odometerTextField;
 
@@ -29,7 +29,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 @synthesize date                = _date;
 @synthesize dateField           = _dateField;
 @synthesize datePicker          = _datePicker;
-@synthesize doneButton          = _doneButton;
+@synthesize saveButton          = _saveButton;
 @synthesize fueling             = _fueling;
 @synthesize fuelVolumeTextField = _fuelVolumeTextField;
 @synthesize managedObjectContext= _managedObjectContext;
@@ -71,7 +71,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     // Clear the entries
     [self clearCost];
     [self clearFuelVolume];
-    [self setDoneButtonState];
+    [self setSaveButtonState];
 }
 
 - (BOOL)textFieldHasData:(UITextField *)textField {
@@ -90,14 +90,14 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     return [self textFieldHasData:self.odometerTextField];
 }
 
-- (void)setDoneButtonState {
-    self.doneButton.enabled = [self costHasData]
+- (void)setSaveButtonState {
+    self.saveButton.enabled = [self costHasData]
     && [self fuelHasData]
     && [self odometerHasData];
 }
 
 - (void)textFieldChanaged:(id)object {
-    [self setDoneButtonState];
+    [self setSaveButtonState];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -133,7 +133,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     
     [self showDate];
 
-    [self setDoneButtonState];
+    [self setSaveButtonState];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -153,7 +153,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 - (void)viewDidUnload {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-    [self setDoneButton:nil];
+    [self setSaveButton:nil];
     [self setOdometerTextField:nil];
     [self setFuelVolumeTextField:nil];
     [self setCostTextField:nil];
@@ -217,7 +217,7 @@ target:self action:SELECTOR]
 
 - (void)clearCost {
     self.costTextField.text = @"";
-    [self setDoneButtonState];
+    [self setSaveButtonState];
 }
 
 - (void)hideCostKeyboard {
@@ -276,7 +276,7 @@ target:self action:SELECTOR]
         [newString replaceOccurrencesOfString:@"." withString:@"" options:0 range:NSMakeRange(0, [newString length])];
         NSInteger intValue = [newString integerValue];
         textField.text = [NSString stringWithFormat:@"%0.2f", intValue / 100.0];
-        [self setDoneButtonState];
+        [self setSaveButtonState];
         return NO;
     }
     
