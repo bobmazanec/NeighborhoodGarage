@@ -45,14 +45,17 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 }
 
 - (IBAction)saveFueling:(id)sender {
-    if ( ! self.fueling) {
-        self.fueling = [NSEntityDescription insertNewObjectForEntityForName:@"Fueling"inManagedObjectContext:self.managedObjectContext];
+    NGFueling *fueling;
+    
+    if (( fueling = self.fueling ) == nil ) {
+        // Not editing an existing Fueling -- make a new one
+        fueling = [NSEntityDescription insertNewObjectForEntityForName:@"Fueling"inManagedObjectContext:self.managedObjectContext];
     }
     
-    self.fueling.timeStamp    = self.date;
-    self.fueling.odometer     = NumberFromTextField( self.odometerTextField );
-    self.fueling.fuelCost     = NumberFromTextField( self.costTextField );
-    self.fueling.fuelVolume   = NumberFromTextField( self.fuelVolumeTextField );
+    fueling.timeStamp    = self.date;
+    fueling.odometer     = NumberFromTextField( self.odometerTextField );
+    fueling.fuelCost     = NumberFromTextField( self.costTextField );
+    fueling.fuelVolume   = NumberFromTextField( self.fuelVolumeTextField );
     
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
@@ -68,10 +71,15 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     [self hideOdometerKeyboard];
     [self dismissDatePicker];
     
-    // Clear the entries
-    [self clearCost];
-    [self clearFuelVolume];
-    [self setSaveButtonState];
+    if ( self.fueling ) {
+        // Back to the "parent"
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        // Clear the entries - ready for next entry
+        [self clearCost];
+        [self clearFuelVolume];
+        [self setSaveButtonState];
+    }
 }
 
 - (BOOL)textFieldHasData:(UITextField *)textField {
