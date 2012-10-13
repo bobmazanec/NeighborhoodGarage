@@ -9,7 +9,7 @@
 #import "NGFuelingDetailViewController.h"
 
 @interface NGFuelingDetailViewController ()
-- (void)configureView;
+- (void)populateView;
 @end
 
 @implementation NGFuelingDetailViewController
@@ -28,11 +28,11 @@
         _fueling = newFueling;
         
         // Update the view.
-        [self configureView];
+        [self populateView];
     }
 }
 
-- (void)configureView
+- (void)populateView
 {
     // Update the user interface for the detail item.
 
@@ -48,11 +48,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    [self populateView];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    [self configureView];
+    [self populateView];
 }
 
 - (void)viewDidUnload
