@@ -124,6 +124,8 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
         self.date                       =  self.fueling.timeStamp;
         self.fuelVolumeTextField.text   = [self.fueling.fuelVolume stringValue];
         self.odometerTextField  .text   = [self.fueling.odometer   stringValue];
+        
+        self.title = @"Edit Fueling";
     } else {
         self.date = [NSDate date];
     }

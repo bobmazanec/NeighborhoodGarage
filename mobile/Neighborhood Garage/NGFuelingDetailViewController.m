@@ -51,6 +51,10 @@
     [self configureView];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self configureView];
+}
+
 - (void)viewDidUnload
 {
     [self setOdometerLabel:nil];
@@ -63,6 +67,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [[segue destinationViewController] setFueling:self.fueling];
 }
 
 @end

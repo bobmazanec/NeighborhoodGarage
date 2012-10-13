@@ -155,11 +155,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="EMJ-r7-UA5" detailTextLabel="por-c7-KgX" style="IBUITableViewCellStyleValue2" id="lJ0-d7-vTF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="EMJ-r7-UA5" detailTextLabel="por-c7-KgX" style="IBUITableViewCellStyleValue2" id="lJ0-d7-vTF">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EMJ-r7-UA5">
@@ -192,9 +192,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Fuelings" id="Ws7-ui-aMZ"/>
-                    <connections>
-                        <segue destination="Kxd-hi-xND" kind="push" identifier="editDetail" id="iR1-at-KWa"/>
-                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1145" y="64"/>
@@ -243,7 +240,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="26"/>
+                    <navigationItem key="navigationItem" title="Detail" id="26">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="NCf-WX-9gA">
+                            <connections>
+                                <segue destination="Kxd-hi-xND" kind="push" id="RfQ-gb-i1B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="costLabel" destination="Nca-Ai-WJa" id="xQf-89-cyU"/>
                         <outlet property="dateLabel" destination="27" id="Awx-DA-A3n"/>
@@ -290,7 +293,6 @@
         <class className="NGFuelingViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NGFuelingViewController.h"/>
             <relationships>
-                <relationship kind="action" name="saveFueling:"/>
                 <relationship kind="outlet" name="costTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dateField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="fuelVolumeTextField" candidateClass="UITextField"/>
@@ -305,6 +307,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iR1-at-KWa"/>
+        <segue reference="RfQ-gb-i1B"/>
     </inferredMetricsTieBreakers>
 </document>
