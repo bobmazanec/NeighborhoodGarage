@@ -16,6 +16,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 @interface NGFuelingViewController ()
 @property (weak, nonatomic) IBOutlet UITextField        *costTextField;
 @property (weak, nonatomic) IBOutlet UITextField        *dateField;
+@property (weak, nonatomic) IBOutlet UIButton           *deleteButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem    *saveButton;
 @property (weak, nonatomic) IBOutlet UITextField        *fuelVolumeTextField;
 @property (weak, nonatomic) IBOutlet UITextField        *odometerTextField;
@@ -29,6 +30,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 @synthesize date                = _date;
 @synthesize dateField           = _dateField;
 @synthesize datePicker          = _datePicker;
+@synthesize deleteButton        = _deleteButton;
 @synthesize saveButton          = _saveButton;
 @synthesize fueling             = _fueling;
 @synthesize fuelVolumeTextField = _fuelVolumeTextField;
@@ -44,6 +46,27 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     return _managedObjectContext;
 }
 
+- (IBAction)deleteFueling:(id)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Really delete this Fueling?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"No - do not delete"
+                                         destructiveButtonTitle:@"Yes - delete"
+                                              otherButtonTitles:nil
+                            ];
+    
+    [sheet showFromTabBar:self.navigationController.tabBarController.tabBar];
+}
+
+- (void) saveChanges {
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+}
+
 - (IBAction)saveFueling:(id)sender {
     NGFueling *fueling;
     
@@ -57,13 +80,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     fueling.fuelCost     = NumberFromTextField( self.costTextField );
     fueling.fuelVolume   = NumberFromTextField( self.fuelVolumeTextField );
     
-    NSError *error = nil;
-    if (![self.managedObjectContext save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+    [self saveChanges];
     
     // Dismiss/hide any keyboard/inputView visible
     [self hideCostKeyboard];
@@ -125,9 +142,12 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
         self.fuelVolumeTextField.text   = [self.fueling.fuelVolume stringValue];
         self.odometerTextField  .text   = [self.fueling.odometer   stringValue];
         
-        self.title = @"Edit Fueling";
+        self.title                  = @"Edit Fueling Info";
+        
+        self.deleteButton.hidden    = NO;
     } else {
-        self.date = [NSDate date];
+        self.date                   = [NSDate date];
+        self.deleteButton.hidden    = YES;
     }
     
     self.costTextField.keyboardType         = UIKeyboardTypeNumberPad;
@@ -168,6 +188,7 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
     [self setFuelVolumeTextField:nil];
     [self setCostTextField:nil];
     [self setDateField:nil];
+    [self setDeleteButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -291,6 +312,24 @@ target:self action:SELECTOR]
     }
     
     return YES;
+}
+
+#pragma mark - UIActionSheetDelegate
+
+static const NSInteger ConfirmButtonIndex = 0;
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if ( buttonIndex == ConfirmButtonIndex ) {
+        [self.managedObjectContext deleteObject:self.fueling];
+        [self saveChanges];
+    
+        // Pop view past the 'detail' view back to the list
+        NSArray             *viewControllers                = self.navigationController.viewControllers;
+        NSUInteger           numViewControllers             = [viewControllers count];
+        NSUInteger           viewControllerBeforeLastIndex  = numViewControllers - 3;   // -1 is this; -2 is previous; -3 before that one
+        UIViewController    *viewControllerBeforeLast       = [viewControllers objectAtIndex:viewControllerBeforeLastIndex];
+        [self.navigationController popToViewController:viewControllerBeforeLast animated:YES];
+    }
 }
 
 @end
