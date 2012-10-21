@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Bob Mazanec. All rights reserved.
 //
 
-#import "NGFueling.h"
+#import "NGFueling+CoreDataOps.h"
 #import "NGFuelingViewController.h"
 
 static NSNumber *NumberFromTextField( UITextField *textField) {
@@ -92,6 +92,23 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
         // Back to the "parent"
         [self.navigationController popViewControllerAnimated:YES];
     } else {
+        NGFueling *previousFueling;
+        
+        if (( previousFueling = fueling.previousFueling )) {
+            double      milesSince      = [fueling.odometer doubleValue] - [previousFueling.odometer doubleValue];
+            NSInteger   daysSince       = [fueling.timeStamp timeIntervalSinceDate:previousFueling.timeStamp] / ( 60 * 60 * 24 );
+            double      milesPerGallon  = milesSince / [fueling.fuelVolume doubleValue];
+            
+            // Really want to compute & display stats for that last "tank" of gas, but for now...
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Since Last Fueling..."
+                                                            message:[NSString stringWithFormat:@"Miles = %02lf\nDays = %d\nMPG = %02lf", milesSince, daysSince, milesPerGallon]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
+        
         // Clear the entries - ready for next entry
         [self clearCost];
         [self clearFuelVolume];
