@@ -26,4 +26,15 @@
     
     return nil;
 }
+
+- (NSString *)dateString {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    dateFormatter.dateFormat = @"MM/dd/yyyy";
+    return [dateFormatter stringFromDate:self.timeStamp];
+}
+
+- (NSString *)costString {
+    return [NSString stringWithFormat:@"%0.2f", [self.fuelCost doubleValue]];
+}
 @end

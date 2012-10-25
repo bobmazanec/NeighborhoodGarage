@@ -10,14 +10,19 @@
 
 @interface NGFuelingDetailViewController ()
 - (void)populateView;
+
+@property (weak, nonatomic) IBOutlet UILabel *costLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *odometerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *volumeLabel;
 @end
 
 @implementation NGFuelingDetailViewController
-@synthesize odometerLabel = _odometerLabel;
-@synthesize volumeLabel = _volumeLabel;
-@synthesize costLabel = _costLabel;
-
-@synthesize fueling = _fueling;
+@synthesize costLabel       = _costLabel;
+@synthesize dateLabel       = _dateLabel;
+@synthesize fueling         = _fueling;
+@synthesize odometerLabel   = _odometerLabel;
+@synthesize volumeLabel     = _volumeLabel;
 
 
 #pragma mark - Managing the detail item
@@ -37,10 +42,10 @@
     // Update the user interface for the detail item.
 
     if (self.fueling) {
-        self.dateLabel    .text = [self.fueling.timeStamp  description];
+        self.dateLabel    .text =  self.fueling.dateString;
         self.odometerLabel.text = [self.fueling.odometer   stringValue];
         self.volumeLabel  .text = [self.fueling.fuelVolume stringValue];
-        self.costLabel    .text = [self.fueling.fuelCost   stringValue];
+        self.costLabel    .text =  self.fueling.costString;
     }
 }
 

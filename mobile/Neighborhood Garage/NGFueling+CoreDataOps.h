@@ -9,5 +9,9 @@
 #import "NGFueling.h"
 
 @interface NGFueling (CoreDataOps)
-@property (strong, readonly) NGFueling *previousFueling;
+@property (strong, readonly) NGFueling  *previousFueling;
+
+// Formatted strings
+@property (strong, readonly) NSString   *dateString;  // "MM/DD/YYYY"
+@property (strong, readonly) NSString   *costString;  // "ddd.cc"
 @end

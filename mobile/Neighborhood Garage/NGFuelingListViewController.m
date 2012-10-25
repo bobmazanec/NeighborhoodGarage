@@ -8,7 +8,7 @@
 
 #import "NGFuelingListViewController.h"
 
-#import "NGFueling.h"
+#import "NGFueling+CoreDataOps.h"
 #import "NGFuelingDetailViewController.h"
 #import "NGFuelingViewController.h"
 
@@ -76,9 +76,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"editDetail"]
-     || [[segue identifier] isEqualToString:@"showDetail"]
-    ) {
+    if ( [[segue identifier] isEqualToString:@"showDetail"] ) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NGFueling *fueling  = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setFueling:fueling];
@@ -186,13 +184,9 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeStyle = NSDateFormatterNoStyle;
-    dateFormatter.dateFormat = @"MM/dd/yyyy";
-    
     NGFueling *fueling = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:fueling.timeStamp]];
+    cell.textLabel.text = fueling.dateString;
     
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2lf mi. %.2lf gal.", [fueling.odometer doubleValue], [fueling.fuelVolume doubleValue]];
 }
