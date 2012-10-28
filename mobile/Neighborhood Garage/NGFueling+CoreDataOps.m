@@ -9,13 +9,14 @@
 #import "NGFueling+CoreDataOps.h"
 
 @implementation NGFueling (CoreDataOps)
-- (NGFueling *)previousFueling {
+- (NGFueling *)fetchNearestFueling:(BOOL)following {
+    NSString       *predicateFormat = [NSString stringWithFormat:@"odometer %@ %%@", following ? @">" : @"<"];
     NSFetchRequest *fetchRequest = [NSFetchRequest alloc];
     
     fetchRequest.entity             = self.entity;
-    fetchRequest.sortDescriptors    = @[[[NSSortDescriptor alloc] initWithKey:@"odometer" ascending:NO]];   // descending by odometer
-    fetchRequest.predicate          = [NSPredicate predicateWithFormat:@"odometer < %@", self.odometer];    // less than this fueling's mileage
-    fetchRequest.fetchBatchSize     = 1;                                                                    // just the first -- so the previous fueling
+    fetchRequest.sortDescriptors    = @[[[NSSortDescriptor alloc] initWithKey:@"odometer" ascending:following]];
+    fetchRequest.predicate          = [NSPredicate predicateWithFormat:predicateFormat, self.odometer];
+    fetchRequest.fetchBatchSize     = 1;
     
     NSError *fetchError     = nil;
     NSArray *fetchResults   = [self.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
@@ -27,6 +28,14 @@
     return nil;
 }
 
+- (NGFueling *)previousFueling {
+    return [self fetchNearestFueling:NO];   // not following, so previous
+}
+
+- (NGFueling *)nextFueling {
+    return [self fetchNearestFueling:YES];   // not following, so previous
+}
+
 - (NSString *)dateString {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.timeStyle = NSDateFormatterNoStyle;
@@ -36,5 +45,16 @@
 
 - (NSString *)costString {
     return [NSString stringWithFormat:@"%0.2f", [self.fuelCost doubleValue]];
+}
+
+- (NSArray *)fuelingsToDate {
+    NSFetchRequest *fetchRequest = [NSFetchRequest alloc];
+    
+    fetchRequest.entity             = self.entity;
+    fetchRequest.sortDescriptors    = @[[[NSSortDescriptor alloc] initWithKey:@"odometer" ascending:YES]];
+    fetchRequest.predicate          = [NSPredicate predicateWithFormat:@"odometer <= %@", self.odometer];
+    
+    NSError *fetchError     = nil;
+    return  [self.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
 }
 @end

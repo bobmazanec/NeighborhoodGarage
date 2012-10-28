@@ -9,6 +9,8 @@
 #import "NGFueling.h"
 
 @interface NGFueling (CoreDataOps)
+@property (strong, readonly) NSArray    *fuelingsToDate;
+@property (strong, readonly) NGFueling  *nextFueling;
 @property (strong, readonly) NGFueling  *previousFueling;
 
 // Formatted strings
