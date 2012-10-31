@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NGFueling.h"
+
 @interface NGFuelingViewController : UITableViewController <UIActionSheetDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) NSManagedObjectContext    *managedObjectContext;
 @property (strong, nonatomic) NGFueling                 *fueling;

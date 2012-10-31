@@ -21,6 +21,23 @@
 @synthesize fetchedResultsController= _fetchedResultsController;
 @synthesize managedObjectContext    = _managedObjectContext;
 
+- (IBAction)selectCar:(UIBarButtonItem *)sender {
+    NSString *title = @"\n\n\n\n\n\n\n\n\n\n\n\n";
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Select", nil];
+    
+    UIPickerView *picker = [[UIPickerView alloc] init];
+    picker.dataSource   = self;
+    picker.delegate     = self;
+    picker.showsSelectionIndicator  = YES;
+    [picker selectRow:1 inComponent:0 animated:NO];
+    
+    [actionSheet addSubview:picker];
+    
+    [actionSheet showFromTabBar:self.navigationController.tabBarController.tabBar];
+    
+}
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -191,4 +208,25 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2lf mi. %.2lf gal.", [fueling.odometer doubleValue], [fueling.fuelVolume doubleValue]];
 }
 
+#pragma mark - Car Picker
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 2;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return row == 0 ? @"2001 Mazda Miata" : @"1999 Toyota Tacoma";
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if ( buttonIndex == 0 ) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"and then..." message:@"Title changes to selected car;\ntable contents change" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alertView show];
+    }
+}
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4268809163F5125003F6C38 /* NGFueling2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4268808163F5125003F6C38 /* NGFueling2ViewController.m */; };
 		C44607861618B8FC005CA102 /* NGFuelingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44607851618B8FC005CA102 /* NGFuelingListViewController.m */; };
 		C49D4023162F885C00068B0C /* NGFueling+CoreDataOps.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D4022162F885C00068B0C /* NGFueling+CoreDataOps.m */; };
 		C4EBDF7416154F3D00ACA506 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7316154F3D00ACA506 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C4268807163F5125003F6C38 /* NGFueling2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGFueling2ViewController.h; sourceTree = "<group>"; };
+		C4268808163F5125003F6C38 /* NGFueling2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGFueling2ViewController.m; sourceTree = "<group>"; };
 		C44607851618B8FC005CA102 /* NGFuelingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGFuelingListViewController.m; sourceTree = "<group>"; };
 		C49D4021162F885C00068B0C /* NGFueling+CoreDataOps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NGFueling+CoreDataOps.h"; sourceTree = "<group>"; };
 		C49D4022162F885C00068B0C /* NGFueling+CoreDataOps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NGFueling+CoreDataOps.m"; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 		C4EBDF7B16154F3D00ACA506 /* Neighborhood Garage */ = {
 			isa = PBXGroup;
 			children = (
+				C4268807163F5125003F6C38 /* NGFueling2ViewController.h */,
+				C4268808163F5125003F6C38 /* NGFueling2ViewController.m */,
 				C49D4021162F885C00068B0C /* NGFueling+CoreDataOps.h */,
 				C49D4022162F885C00068B0C /* NGFueling+CoreDataOps.m */,
 				C4EBDF8416154F3D00ACA506 /* NGAppDelegate.h */,
@@ -296,6 +301,7 @@
 				C4EBDFC41617A07D00ACA506 /* NGFueling.m in Sources */,
 				C44607861618B8FC005CA102 /* NGFuelingListViewController.m in Sources */,
 				C49D4023162F885C00068B0C /* NGFueling+CoreDataOps.m in Sources */,
+				C4268809163F5125003F6C38 /* NGFueling2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface NGFuelingListViewController : UITableViewController <NSFetchedResultsControllerDelegate, UITextFieldDelegate>
+@interface NGFuelingListViewController : UITableViewController <NSFetchedResultsControllerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

@@ -162,6 +162,81 @@
             </objects>
             <point key="canvasLocation" x="685" y="64"/>
         </scene>
+        <!--Table View Controller - Cars-->
+        <scene sceneID="4c1-z1-BKk">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AvS-1O-bMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="sxo-Af-WCx" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZUN-2u-2bt">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="wAf-pl-Cea">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Vkz-sr-RY4" style="IBUITableViewCellStyleDefault" id="hen-Ni-hfa">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="2001 Mazda Miata" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vkz-sr-RY4">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vbL-sF-jQu" style="IBUITableViewCellStyleDefault" id="lkb-pP-zPL">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="1999 Toyota Tacoma" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vbL-sF-jQu">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Cars" id="tVr-GC-gcp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FpW-Oi-KQr"/>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1145" y="653"/>
+        </scene>
+        <!--Navigation Controller - Cars-->
+        <scene sceneID="YFc-3W-hCU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKT-cM-ZfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController title="Cars" definesPresentationContext="YES" id="aGe-1f-N2s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cars" id="x2z-W9-wVK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nab-7S-aYI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sxo-Af-WCx" kind="relationship" relationship="rootViewController" id="H5b-TM-BP5"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="685" y="653"/>
+        </scene>
         <!--Fueling List View Controller - Master-->
         <scene sceneID="18">
             <objects>
@@ -208,7 +283,13 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Fuelings" id="Ws7-ui-aMZ"/>
+                    <navigationItem key="navigationItem" title="1999 Toyota Tacoma" id="Ws7-ui-aMZ">
+                        <barButtonItem key="rightBarButtonItem" title="Car" id="tB4-0c-aMm">
+                            <connections>
+                                <action selector="selectCar:" destination="12" id="B6M-N1-sIx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1145" y="64"/>
@@ -476,13 +557,168 @@
                     <connections>
                         <segue destination="aJ3-rZ-seZ" kind="relationship" relationship="viewControllers" id="2mM-mK-whb"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="2x4-ta-Ttq"/>
+                        <segue destination="aGe-1f-N2s" kind="relationship" relationship="viewControllers" id="dH0-eX-52I"/>
+                        <segue destination="cSe-8v-nox" kind="relationship" relationship="viewControllers" id="N4y-xm-6QO"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="104" y="-116"/>
         </scene>
+        <!--Navigation Controller - Fuel2-->
+        <scene sceneID="Cw2-qH-bZF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhv-5B-z1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="cSe-8v-nox" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Fuel2" id="heT-RI-g4A"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p8d-rY-7z4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0We-xT-wgR" kind="relationship" relationship="rootViewController" id="n5K-ZR-YQy"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="691" y="-1202"/>
+        </scene>
+        <!--Fueling2 View Controller - Enter Fueling Info-->
+        <scene sceneID="Ofx-1C-kbr">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dXw-XS-PCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="0We-xT-wgR" customClass="NGFueling2ViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="k71-dX-3M0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="khk-5S-JLb">
+                            <rect key="frame" x="0.0" y="388" width="320" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <state key="normal" title="Delete">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="deleteFueling:" destination="0We-xT-wgR" eventType="touchUpInside" id="5Sl-qy-Roy"/>
+                            </connections>
+                        </button>
+                        <sections>
+                            <tableViewSection id="JeV-rW-IqB">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="388" id="Fr0-S5-0ik">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="388"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="387"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Odometer:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="GLK-Jh-kwP">
+                                                    <rect key="frame" x="20" y="229" width="82" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000000.0" minimumFontSize="17" id="mE3-ed-ntz">
+                                                    <rect key="frame" x="110" y="224" width="144" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Fuel:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yDi-Qg-kYk">
+                                                    <rect key="frame" x="20" y="268" width="82" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="gal." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="6bH-yn-5Hq">
+                                                    <rect key="frame" x="262" y="268" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000.000" minimumFontSize="17" id="MK1-Jv-PUN">
+                                                    <rect key="frame" x="110" y="263" width="144" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cost: $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="tvy-Iv-DbE">
+                                                    <rect key="frame" x="20" y="307" width="82" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000.00" minimumFontSize="17" id="JqR-75-jjx">
+                                                    <rect key="frame" x="110" y="301" width="144" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" label="CostField">
+                                                        <accessibilityTraits key="traits" none="YES"/>
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="3uq-7D-jsi">
+                                                    <rect key="frame" x="20" y="346" width="82" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Eb3-qe-L3Z">
+                                                    <rect key="frame" x="110" y="340" width="144" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <pickerView contentMode="scaleToFill" id="uah-Tc-g5u">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Enter Fueling Info" id="oS8-Ay-e5c">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cNe-WI-uGj">
+                            <connections>
+                                <action selector="saveFueling:" destination="0We-xT-wgR" id="Zdg-Kt-Zgr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="costTextField" destination="JqR-75-jjx" id="A2L-iB-6dD"/>
+                        <outlet property="dateField" destination="Eb3-qe-L3Z" id="Oq0-dl-tvH"/>
+                        <outlet property="deleteButton" destination="khk-5S-JLb" id="TWR-dv-6va"/>
+                        <outlet property="fuelVolumeTextField" destination="MK1-Jv-PUN" id="t9Q-nn-DPc"/>
+                        <outlet property="odometerTextField" destination="mE3-ed-ntz" id="hft-Zi-Dpu"/>
+                        <outlet property="picker" destination="uah-Tc-g5u" id="aKG-hM-grX"/>
+                        <outlet property="saveButton" destination="cNe-WI-uGj" id="gtU-lh-Y6f"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1145" y="-1202"/>
+        </scene>
     </scenes>
     <classes>
+        <class className="NGFueling2ViewController" superclassName="NGFuelingViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NGFueling2ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="deleteButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
         <class className="NGFuelingDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NGFuelingDetailViewController.h"/>
             <relationships>
@@ -493,7 +729,6 @@
                 <relationship kind="outlet" name="odometerLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tankMpgLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="toDateMpgLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toNextFillupSection" candidateClass="UITableViewSection"/>
                 <relationship kind="outlet" name="volumeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -520,6 +755,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="noc-Dq-z74"/>
+        <segue reference="Fnr-eq-rAT"/>
     </inferredMetricsTieBreakers>
 </document>
