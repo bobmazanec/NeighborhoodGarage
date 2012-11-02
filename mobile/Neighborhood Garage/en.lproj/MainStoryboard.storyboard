@@ -669,6 +669,8 @@
         <class className="NGFuelingViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NGFuelingViewController.h"/>
             <relationships>
+                <relationship kind="action" name="deleteFueling:"/>
+                <relationship kind="action" name="saveFueling:"/>
                 <relationship kind="outlet" name="costTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dateField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="deleteButton" candidateClass="UIButton"/>
@@ -684,8 +686,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Fnr-eq-rAT"/>
         <segue reference="JST-32-BPY"/>
-        <segue reference="noc-Dq-z74"/>
-        <segue reference="533-eq-Fzx"/>
+        <segue reference="j2V-hy-sSg"/>
     </inferredMetricsTieBreakers>
 </document>
