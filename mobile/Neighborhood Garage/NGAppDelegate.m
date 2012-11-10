@@ -113,6 +113,25 @@
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Neighborhood_Garage.sqlite"];
     
+    // Check if a data store already exists in the documents directory.
+    
+    if ( ![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]] ) {
+        // If there’s no Data Store present
+        // (which is the case when the app first launches),
+        // identify the sqlite file in the Bundle Resources,
+        // copy it into the Documents directory,
+        // and make it the Data Store.
+        NSString *sqlitePath = [[NSBundle mainBundle] pathForResource:@"Neighborhood_Garage"
+                                                               ofType:@"sqlite"
+                                                          inDirectory:nil];
+        NSError *anyError = nil;
+        BOOL success = [[NSFileManager defaultManager] copyItemAtPath:sqlitePath
+                                                               toPath:[storeURL path] error:&anyError];
+        if ( ! success ) {
+            // ??
+        }
+    }
+    
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {

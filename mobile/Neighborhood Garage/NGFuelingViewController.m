@@ -37,6 +37,10 @@ static NSNumber *NumberFromTextField( UITextField *textField) {
 @synthesize managedObjectContext= _managedObjectContext;
 @synthesize odometerTextField   = _odometerTextField;
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+}
+
 
 - (NSManagedObjectContext *)managedObjectContext {
     if ( ! _managedObjectContext && self.fueling != nil ) {

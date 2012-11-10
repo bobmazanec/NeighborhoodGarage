@@ -81,6 +81,10 @@
         NGFueling *fueling  = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setFueling:fueling];
     }
+    
+    if ( [[segue identifier] isEqualToString:@"selectCar"] ) {
+        [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+    }
 }
 
 #pragma mark - Fetched results controller

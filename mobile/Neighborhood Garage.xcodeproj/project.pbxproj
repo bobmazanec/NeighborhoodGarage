@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C426881C1645C9D0003F6C38 /* NGCarsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C426881B1645C9D0003F6C38 /* NGCarsListViewController.m */; };
+		C426881F1645CA88003F6C38 /* NGCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C426881E1645CA88003F6C38 /* NGCarViewController.m */; };
+		C42688251645CC8B003F6C38 /* NGFueling.m in Sources */ = {isa = PBXBuildFile; fileRef = C42688241645CC8B003F6C38 /* NGFueling.m */; };
 		C44607861618B8FC005CA102 /* NGFuelingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44607851618B8FC005CA102 /* NGFuelingListViewController.m */; };
+		C484BD221646A6C600E55918 /* NGCar.m in Sources */ = {isa = PBXBuildFile; fileRef = C484BD211646A6C600E55918 /* NGCar.m */; };
+		C484BD251646EC5D00E55918 /* Neighborhood_Garage.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C484BD241646EC5D00E55918 /* Neighborhood_Garage.sqlite */; };
+		C484BD2F164715AC00E55918 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = C484BD2E164715AC00E55918 /* tick.png */; };
+		C484BD3216472C1000E55918 /* NGCar+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = C484BD3116472C1000E55918 /* NGCar+Helpers.m */; };
 		C49D4023162F885C00068B0C /* NGFueling+CoreDataOps.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D4022162F885C00068B0C /* NGFueling+CoreDataOps.m */; };
 		C4EBDF7416154F3D00ACA506 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7316154F3D00ACA506 /* UIKit.framework */; };
 		C4EBDF7616154F3D00ACA506 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EBDF7516154F3D00ACA506 /* Foundation.framework */; };
@@ -26,7 +33,6 @@
 		C4EBDFA516154F3D00ACA506 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4EBDFA316154F3D00ACA506 /* InfoPlist.strings */; };
 		C4EBDFA816154F3D00ACA506 /* Neighborhood_GarageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDFA716154F3D00ACA506 /* Neighborhood_GarageTests.m */; };
 		C4EBDFB81616AEE900ACA506 /* NGFuelingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDFB71616AEE900ACA506 /* NGFuelingViewController.m */; };
-		C4EBDFC41617A07D00ACA506 /* NGFueling.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBDFC31617A07D00ACA506 /* NGFueling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +46,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C426881A1645C9D0003F6C38 /* NGCarsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGCarsListViewController.h; sourceTree = "<group>"; };
+		C426881B1645C9D0003F6C38 /* NGCarsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGCarsListViewController.m; sourceTree = "<group>"; };
+		C426881D1645CA88003F6C38 /* NGCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGCarViewController.h; sourceTree = "<group>"; };
+		C426881E1645CA88003F6C38 /* NGCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGCarViewController.m; sourceTree = "<group>"; };
+		C42688231645CC8B003F6C38 /* NGFueling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGFueling.h; sourceTree = "<group>"; };
+		C42688241645CC8B003F6C38 /* NGFueling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGFueling.m; sourceTree = "<group>"; };
 		C44607851618B8FC005CA102 /* NGFuelingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGFuelingListViewController.m; sourceTree = "<group>"; };
+		C484BD201646A6C600E55918 /* NGCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGCar.h; sourceTree = "<group>"; };
+		C484BD211646A6C600E55918 /* NGCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGCar.m; sourceTree = "<group>"; };
+		C484BD241646EC5D00E55918 /* Neighborhood_Garage.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Neighborhood_Garage.sqlite; sourceTree = "<group>"; };
+		C484BD2E164715AC00E55918 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		C484BD3016472C1000E55918 /* NGCar+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NGCar+Helpers.h"; sourceTree = "<group>"; };
+		C484BD3116472C1000E55918 /* NGCar+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NGCar+Helpers.m"; sourceTree = "<group>"; };
 		C49D4021162F885C00068B0C /* NGFueling+CoreDataOps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NGFueling+CoreDataOps.h"; sourceTree = "<group>"; };
 		C49D4022162F885C00068B0C /* NGFueling+CoreDataOps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NGFueling+CoreDataOps.m"; sourceTree = "<group>"; };
 		C4EBDF6F16154F3D00ACA506 /* Neighborhood Garage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighborhood Garage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,8 +85,6 @@
 		C4EBDFA716154F3D00ACA506 /* Neighborhood_GarageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Neighborhood_GarageTests.m; sourceTree = "<group>"; };
 		C4EBDFB61616AEE900ACA506 /* NGFuelingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGFuelingViewController.h; sourceTree = "<group>"; };
 		C4EBDFB71616AEE900ACA506 /* NGFuelingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGFuelingViewController.m; sourceTree = "<group>"; };
-		C4EBDFC21617A07D00ACA506 /* NGFueling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGFueling.h; sourceTree = "<group>"; };
-		C4EBDFC31617A07D00ACA506 /* NGFueling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGFueling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +113,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C484BD331647608000E55918 /* NGCar */ = {
+			isa = PBXGroup;
+			children = (
+				C484BD3016472C1000E55918 /* NGCar+Helpers.h */,
+				C484BD3116472C1000E55918 /* NGCar+Helpers.m */,
+				C484BD201646A6C600E55918 /* NGCar.h */,
+				C484BD211646A6C600E55918 /* NGCar.m */,
+			);
+			name = NGCar;
+			sourceTree = "<group>";
+		};
+		C484BD36164760CC00E55918 /* NGFueling */ = {
+			isa = PBXGroup;
+			children = (
+				C42688231645CC8B003F6C38 /* NGFueling.h */,
+				C42688241645CC8B003F6C38 /* NGFueling.m */,
+				C49D4021162F885C00068B0C /* NGFueling+CoreDataOps.h */,
+				C49D4022162F885C00068B0C /* NGFueling+CoreDataOps.m */,
+			);
+			name = NGFueling;
+			sourceTree = "<group>";
+		};
 		C4EBDF6416154F3D00ACA506 = {
 			isa = PBXGroup;
 			children = (
@@ -131,12 +169,14 @@
 		C4EBDF7B16154F3D00ACA506 /* Neighborhood Garage */ = {
 			isa = PBXGroup;
 			children = (
-				C49D4021162F885C00068B0C /* NGFueling+CoreDataOps.h */,
-				C49D4022162F885C00068B0C /* NGFueling+CoreDataOps.m */,
+				C484BD331647608000E55918 /* NGCar */,
+				C484BD36164760CC00E55918 /* NGFueling */,
+				C426881A1645C9D0003F6C38 /* NGCarsListViewController.h */,
+				C426881B1645C9D0003F6C38 /* NGCarsListViewController.m */,
+				C426881D1645CA88003F6C38 /* NGCarViewController.h */,
+				C426881E1645CA88003F6C38 /* NGCarViewController.m */,
 				C4EBDF8416154F3D00ACA506 /* NGAppDelegate.h */,
 				C4EBDF8516154F3D00ACA506 /* NGAppDelegate.m */,
-				C4EBDFC21617A07D00ACA506 /* NGFueling.h */,
-				C4EBDFC31617A07D00ACA506 /* NGFueling.m */,
 				C4EBDF9016154F3D00ACA506 /* NGFuelingDetailViewController.h */,
 				C4EBDF9116154F3D00ACA506 /* NGFuelingDetailViewController.m */,
 				C4EBDF8D16154F3D00ACA506 /* NGFuelingListViewController.h */,
@@ -153,6 +193,8 @@
 		C4EBDF7C16154F3D00ACA506 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C484BD2E164715AC00E55918 /* tick.png */,
+				C484BD241646EC5D00E55918 /* Neighborhood_Garage.sqlite */,
 				C4EBDF7D16154F3D00ACA506 /* Neighborhood Garage-Info.plist */,
 				C4EBDF7E16154F3D00ACA506 /* InfoPlist.strings */,
 				C4EBDF8116154F3D00ACA506 /* main.m */,
@@ -254,6 +296,8 @@
 			files = (
 				C4EBDF8016154F3D00ACA506 /* InfoPlist.strings in Resources */,
 				C4EBDF8916154F3D00ACA506 /* MainStoryboard.storyboard in Resources */,
+				C484BD251646EC5D00E55918 /* Neighborhood_Garage.sqlite in Resources */,
+				C484BD2F164715AC00E55918 /* tick.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +337,13 @@
 				C4EBDF8C16154F3D00ACA506 /* Neighborhood_Garage.xcdatamodeld in Sources */,
 				C4EBDF9216154F3D00ACA506 /* NGFuelingDetailViewController.m in Sources */,
 				C4EBDFB81616AEE900ACA506 /* NGFuelingViewController.m in Sources */,
-				C4EBDFC41617A07D00ACA506 /* NGFueling.m in Sources */,
 				C44607861618B8FC005CA102 /* NGFuelingListViewController.m in Sources */,
 				C49D4023162F885C00068B0C /* NGFueling+CoreDataOps.m in Sources */,
+				C426881C1645C9D0003F6C38 /* NGCarsListViewController.m in Sources */,
+				C426881F1645CA88003F6C38 /* NGCarViewController.m in Sources */,
+				C42688251645CC8B003F6C38 /* NGFueling.m in Sources */,
+				C484BD221646A6C600E55918 /* NGCar.m in Sources */,
+				C484BD3216472C1000E55918 /* NGCar+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
